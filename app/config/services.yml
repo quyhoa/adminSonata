@@ -29,18 +29,18 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
-    admin.category:
+    app.admin.category:
         class: AppBundle\Admin\CategoryAdmin
         arguments: [~, AppBundle\Entity\Category, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Category }
+            - { name: sonata.admin, manager_type: orm, group: Category, label: Category }
         public: true
 
-    admin.blog_post:
+    app.admin.blog_post:
         class: AppBundle\Admin\BlogPostAdmin
         arguments: [~, AppBundle\Entity\BlogPost, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Blog post }
+            - { name: sonata.admin, manager_type: orm, group: Category, label: Blog post }
         public: true
 
 
